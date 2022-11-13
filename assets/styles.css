@@ -25,6 +25,7 @@ a {
   height: 120px;
   padding: 0 30rem;
   border-bottom: 1px solid #6C757D;
+  z-index: 9999;
 }
 .logo {
   height: 200px;
@@ -45,6 +46,9 @@ a {
   font-size: 2rem;
   font-weight: 500;
   color: #343A40;
+}
+.nav-links__a:last-of-type {
+  display: none;
 }
 .nav-links__a:hover {
   color: #212529;
@@ -80,10 +84,16 @@ a {
 }
 .nav-icons__icon {
   height: 30px;
+  cursor: pointer;
 }
 .nav-icons__icon:hover {
   opacity: 0.8;
 }
+
+.menu-label {
+  display: none;
+}
+
 
 .header {
   display: flex;
@@ -202,6 +212,7 @@ a {
 }
 .news__products {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -278,10 +289,24 @@ a {
   margin-top: 1.8rem;
   color: #343a40;
 }
+.select {
+  padding: -1px;
+  border: 2px solid #343a40;
+}
+.select:hover {
+  padding: -1px;
+  border: 2px solid #343a40;
+}
 
+.cont-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .products {
-  height: 800px;
-  width: 100%;
+  /* min-height: 400px;
+  max-height: auto; */
+  min-width: 300px;
   background-color: #dee2e6;
   display: flex;
   justify-content: center;
@@ -290,6 +315,7 @@ a {
   flex-wrap: wrap;
   border-radius: 2px;
   margin-top: 4rem;
+  padding: 4rem 0;
 }
 
 .footer {
@@ -392,6 +418,161 @@ a {
 .footer__links--a:hover {
   color: #f8f9fa;
 }
+
+@media (max-width: 1380px){
+  .nav {
+    padding: 0 20rem;
+  }
+  
+  .categories-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .categories {
+    flex-wrap: wrap;
+    width: 680px;
+    min-width: 680px;
+  }
+
+
+  .footer {
+    padding: 0 10rem;
+  }
+}
+
+@media (max-width: 1200px){
+  .main {
+    padding: 0 10rem;
+  }
+  .nav {
+    padding: 0 10rem;
+  }
+  .nav-cont {
+    gap: 2rem;
+  }
+
+  .footer {
+    padding: 0;
+  }
+}
+
+@media (max-width: 900px){
+  .nav-links {
+    position: absolute;
+    top: 120px;
+    right: -2px;
+    width: 40%;
+    flex-direction: column;
+    background-color: #dee2e6;
+    border: 2px solid #495057;
+    border-top: 0px;
+    border-radius: 0px 0px 0px 15px;
+    align-items: flex-start;
+    padding: 45px 30px;
+    gap: 25px;
+    z-index: 2;
+    display: none;
+  }
+  .bar {
+    display: none;
+  }
+
+  .menu-label {
+    display: flex;
+    order: 2;
+    cursor: pointer;
+  }
+  .menu-label img {
+    height: 20px;
+    width: 25px;
+  }
+  .open-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 800px){
+  .footer {
+    flex-direction: column;
+    height: auto;
+    gap: 4rem;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .footer__form {
+    margin: 0 auto;
+  }
+  .footer__social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px){
+  .main {
+    padding: 0 2rem;
+  }
+  .nav {
+    padding: 0 4rem;
+  }
+  .nav-links__a:last-of-type {
+    display: flex;
+  }
+  .nav-icons__login--a {
+    display: none;
+  }
+
+  .categories {
+    width: 340px;
+    min-width: 340px;
+  }
+}
+
+@media (max-width: 500px){
+  .logo {
+    height: 140px;
+  }
+
+  .main {
+    padding: 0 4rem;
+  }
+}
+
+
+
+.burger {
+  cursor: pointer;
+}
+
+.burger span{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #212529;
+  position: relative;
+  top: 0;
+  transition: all .3s ease-in-out;
+}
+.burger span:last-of-type {
+  margin: 0;
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -8px;
+}
+
 
 
 .slider {
@@ -516,7 +697,7 @@ a {
 /*carrito*/
 .cart {
   position: absolute;
-  top: 116px;
+  top: 120px;
   right: 0;
   padding: 50px 30px;
   background-color: #e9ecef;
@@ -694,7 +875,7 @@ a {
 
 .overlay {
   position: absolute;
-  top: 0px;
+  top: 120px;
   left: 0;
   height: 100vh;
   width: 100%;
@@ -702,7 +883,7 @@ a {
   
   /*Efecto de Glassmorphismo*/
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   display: none;

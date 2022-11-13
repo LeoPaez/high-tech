@@ -225,9 +225,147 @@ const products = [
 
   //* DISCOS RIGIDOS
   {
-    img: "",
-    name: "",
-    price: "",
+    img: "assets/img/products/hdd/wd-red-4tb-35-sata3.webp",
+    name: 'WD Red 4TB 3.5" SATA3',
+    price: "103",
     category: "discos-rigidos", 
+  },
+  {
+    img: "assets/img/products/hdd/wd-blue-2tb-35-sata3.webp",
+    name: 'WD Blue 2TB 3.5" SATA3',
+    price: "55",
+    category: "discos-rigidos", 
+  },
+  {
+    img: "assets/img/products/hdd/seagate-barracuda-2tb.webp",
+    name: 'Seagate BarraCuda 3.5" 2TB SATA 3',
+    price: "53",
+    category: "discos-rigidos", 
+  },
+  {
+    img: "assets/img/products/hdd/seagate-barracuda-1tb.webp",
+    name: 'Seagate BarraCuda 3.5" 1TB SATA3',
+    price: "42",
+    category: "discos-rigidos", 
+  },
+  {
+    img: "assets/img/products/hdd/wd-blue-1tb.webp",
+    name: 'WD Blue 1TB 3.5" SATA3',
+    price: "41",
+    category: "discos-rigidos", 
+  },
+
+  //* SSD
+  {
+    img: "assets/img/products/ssd/msi-spatium-m480-ssd-2tb-m2-2280-s2-m-nvme-pcie.webp",
+    name: "MSI Spatium M480 HeatSink SSD 2TB M.2 2280-S2-M NVMe PCIe",
+    price: "322",
+    category: "ssd", 
+  },
+  {
+    img: "assets/img/products/ssd/samsung-980-ssd-1tb-pcie-30-nvme-m2.webp",
+    name: "Samsung 980 SSD 1TB PCIe 3.0 NVMe M.2",
+    price: "114",
+    category: "ssd", 
+  },
+  {
+    img: "assets/img/products/ssd/samsung-870-qvo-ssd-25-1tb-sata3-negro.webp",
+    name: 'Samsung 870 EVO SSD 2.5" 1TB SATA3 Negro',
+    price: "102",
+    category: "ssd", 
+  },
+  {
+    img: "assets/img/products/ssd/crucial-bx500-ssd-1tb-3d-nand-sata3.webp",
+    name: "Crucial BX500 SSD 1TB 3D NAND SATA3",
+    price: "80",
+    category: "ssd", 
+  },
+  {
+    img: "assets/img/products/ssd/kingston-ssd.webp",
+    name: "Kingston A400 SSD 480GB",
+    price: "38",
+    category: "ssd", 
+  },
+  {
+    img: "assets/img/products/ssd/kingston-ssd.webp",
+    name: "Kingston A400 SSD 240GB",
+    price: "24",
+    category: "ssd", 
+  },
+
+  //* FUENTES
+  {
+    img: "assets/img/products/power-supplies/corsair-1200w-80-plus-platinum-modular.webp",
+    name: "Corsair HX1200 1200W 80 Plus Platinum Modular",
+    price: "248",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/asus-rog-strix-1000g-1000w-80-plus-gold-modular.webp",
+    name: "Asus ROG Strix 1000G 1000W 80 Plus Gold Modular",
+    price: "200",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/evga-supernova-650-g6-650w-80-plus-gold-full-modular.webp",
+    name: "EVGA SuperNOVA 650 G6 650W 80 Plus Gold Full Modular",
+    price: "117",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/corsair-cv-series-cv650-650w-80-plus-bronze-v2.webp",
+    name: "Corsair CV Series CV650 650W 80 Plus Bronze V2",
+    price: "67",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/thermaltake-smart-rgb-700w-80-plus.webp",
+    name: "Thermaltake Smart RGB 700W 80 Plus",
+    price: "58",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/tempest-gaming-psu-x-650w-80-plus-bronce-modular.webp",
+    name: "Tempest PSU X 650W 80+ Bronce Modular Fuente de Alimentación",
+    price: "46",
+    category: "fuentes", 
+  },
+  {
+    img: "assets/img/products/power-supplies/tempest-psu-750w.webp",
+    name: "Tempest PSU 750W Fuente de Alimentación",
+    price: "35",
+    category: "fuentes", 
+  },
+
+  //* GABINETES
+  {
+    img: "assets/img/products/cases/corsair-7000d-airflow-usb-30-negra.webp",
+    name: "Corsair 7000D AIRFLOW USB 3.0 Negra",
+    price: "355",
+    category: "gabinetes", 
+  },
+  {
+    img: "assets/img/products/cases/corsair-icue-5000x-rgb-ql-edition-cristal-templado-usb-31-blanca.webp",
+    name: "Corsair iCUE 5000X RGB QL Edition Cristal Templado USB 3.1 Blanca",
+    price: "334",
+    category: "gabinetes", 
+  },
+  {
+    img: "assets/img/products/cases/asus-rog-strix-helios-white-edition-cristal-templado.webp",
+    name: "ASUS ROG STRIX HELIOS White Edition Cristal Templado USB 3.2",
+    price: "291",
+    category: "gabinetes", 
+  },
+  {
+    img: "assets/img/products/cases/msi-mpg-velox-100p-airflow-cristal-templado.webp",
+    name: "MSI MPG Velox 100P Airflow Cristal Templado USB 3.2",
+    price: "133",
+    category: "gabinetes", 
+  },
+  {
+    img: "assets/img/products/cases/msi-mpg-sekira-100p-cristal-templado.webp",
+    name: "MSI MPG SEKIRA 100P Cristal Templado USB 3.0",
+    price: "83",
+    category: "gabinetes", 
   },
 ]

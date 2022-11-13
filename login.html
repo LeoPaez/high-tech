@@ -19,7 +19,8 @@
     <div class="nav-cont">
       <div class="nav-links">
         <a class="nav-links__a" href="index.html">Inicio</a>
-        <a class="nav-links__a" href="#">Productos</a>
+        <a class="nav-links__a" href="#products">Productos</a>
+        <a class="nav-links__a" href="/login.html">Ingresar</a>
       </div>
       <div class="bar">
       </div>
@@ -32,35 +33,42 @@
         </div>
         <img class="nav-icons__icon cart-icon" src="/assets/img/cart.png" alt="logo carrito">
       </div>
+      <div class="menu-label">
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>     
+      </div>
+
+      <div class="cart">
+        <p class="close-cart">X</p>
+        <h2>Tus Productos</h2>
+        <div class="cart-container">
+          <div class="cart-item">
+            <img class="item-img" src="assets/img/product-img.webp" alt="" />
+            <div class="item-info">
+              <h3 class="item-title">Nombre</h3>
+              <span class="item-price">$200.000</span>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down" data-id=${id}>-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up" data-id=${id}>+</span>
+            </div>
+          </div>
+        </div>
+        <span class="divider"></span>
+        <div class="cart-total">
+          <p>Total:</p>
+          <span class="total">0.00 ARS</span>
+        </div>
+        <button class="btn-buy">Comprar</button>
+        <button class="btn-delete">Vaciar carrito</button>
+      </div>
+      <div class="overlay"></div>
     </div>
   </nav>
-
-  <div class="cart">
-    <p class="close-cart">X</p>
-    <h2>Tus Productos</h2>
-    <div class="cart-container">
-      <div class="cart-item">
-        <img class="item-img" src="assets/img/product-img.webp" alt="" />
-        <div class="item-info">
-          <h3 class="item-title">Nombre</h3>
-          <span class="item-price">$200.000</span>
-        </div>
-        <div class="item-handler">
-          <span class="quantity-handler down" data-id=${id}>-</span>
-          <span class="item-quantity">1</span>
-          <span class="quantity-handler up" data-id=${id}>+</span>
-        </div>
-      </div>
-    </div>
-    <span class="divider"></span>
-    <div class="cart-total">
-      <p>Total:</p>
-      <span class="total">0.00 ARS</span>
-    </div>
-    <button class="btn-buy">Comprar</button>
-    <button class="btn-delete">Vaciar carrito</button>
-  </div>
-  <div class="overlay"></div>
 
   <main class="main">
     <div class="access">
@@ -79,66 +87,66 @@
     </div>
     <div class="slider">
       <div class="slide-track">
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/amd-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/intel-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/gigabyte-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/asus-rog-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/nvidia-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/kingston-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/western-digital-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/gskill-logo.svg" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/cooler-master-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/corsair-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/amd-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/intel-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/gigabyte-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/asus-rog-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/nvidia-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/kingston-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/western-digital-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/gskill-logo.svg" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/cooler-master-logo.png" alt="patrocinador logo">
-          </div>
-          <div class="slide">
-              <img class="slide__img" src="/assets/img/corsair-logo.png" alt="patrocinador logo">
-          </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/amd-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/intel-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/gigabyte-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/asus-rog-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/nvidia-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/kingston-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/western-digital-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/gskill-logo.svg" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/cooler-master-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/corsair-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/amd-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/intel-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/gigabyte-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/asus-rog-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/nvidia-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/kingston-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/western-digital-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/gskill-logo.svg" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/cooler-master-logo.png" alt="patrocinador logo">
+        </div>
+        <div class="slide">
+          <img class="slide__img" src="/assets/img/brands/corsair-logo.png" alt="patrocinador logo">
+        </div>
       </div>
     </div>
   </main>
