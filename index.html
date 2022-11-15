@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/styles.css">
   <link rel="icon" type="image/x-icon" href="/assets/img/hightech-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/media-queries.css">
   <title>High Tech</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
     </a>
     <div class="nav-cont">
       <div class="nav-links">
-        <a class="nav-links__a" href="index.html">Inicio</a>
+        <a class="nav-links__a" href="/index.html">Inicio</a>
         <a class="nav-links__a" href="#products">Productos</a>
         <a class="nav-links__a" href="/login.html">Ingresar</a>
       </div>
@@ -32,6 +33,7 @@
           </a>
         </div>
         <img class="nav-icons__icon cart-icon" src="/assets/img/cart.png" alt="logo carrito">
+        <p class="cart-quantity"></p>
       </div>
       <div class="menu-label">
         <div class="burger">
@@ -40,24 +42,10 @@
           <span></span>
         </div>     
       </div>
-
       <div class="cart">
         <p class="close-cart">X</p>
         <h2>Tus Productos</h2>
-        <div class="cart-container">
-          <div class="cart-item">
-            <img class="item-img" src="assets/img/product-img.webp" alt="" />
-            <div class="item-info">
-              <h3 class="item-title">Nombre</h3>
-              <span class="item-price">$200.000</span>
-            </div>
-            <div class="item-handler">
-              <span class="quantity-handler down" data-id=${id}>-</span>
-              <span class="item-quantity">1</span>
-              <span class="quantity-handler up" data-id=${id}>+</span>
-            </div>
-          </div>
-        </div>
+        <div class="cart-container"></div>
         <span class="divider"></span>
         <div class="cart-total">
           <p>Total:</p>
@@ -69,7 +57,6 @@
       <div class="overlay"></div>
     </div>
   </nav>
-
 
   <header class="header">
     <h2 class="header__banner">
@@ -93,152 +80,48 @@
   <main class="main">
     <div class="news">
       <h2 class="news__title">ÚLTIMAS NOVEDADES</h2>
-      <div class="news__products">
-        <div class="product">
-          <img class="product__img" src="/assets/img/products/graphics-cards/gigabyte-geforce-rtx-3080-gaming-oc-v2-10gb-gddr6x.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3080 GAMING OC V2 LHR 10GB GDDR6X</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/products/power-supplies/thermaltake-smart-rgb-700w-80-plus.webp" alt="">
-          <p class="product__name">Thermaltake Smart RGB 700W 80 Plus</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/products/processors/ryzen-9-5900x.webp" alt="">
-          <p class="product__name">AMD Ryzen 9 5900X 3.7 GHz</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/products/motherboards/msi-mag-z690-tomahawk.webp" alt="">
-          <p class="product__name">MSI MAG Z690 TOMAHAWK WIFI DDR4</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/products/ram/corsair-vengeance-rgb-pro-ddr416gb-2x8gb.webp" alt="">
-          <p class="product__name">Corsair Vengeance RGB Pro Optimizado AMD DDR4 3200 16GB 2x8GB CL16</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-      </div>
+      <div class="news__products"></div>
     </div>
 
-    <h2 class="news__title">CATEGORIAS</h2>
+    <h2 class="news__title" id="products">CATEGORIAS</h2>
     <div class="categories-cont">
       <div class="categories">
-        <div class="category select">
-          <img class="category__img" src="/assets/img/category-icons/processor.png" alt="procesadores">
-          <p class="category__name">Procesadores</p>
+        <div class="category select" data-category="procesadores">
+          <img class="category__img" src="/assets/img/category-icons/processor.png" alt="procesadores" data-category="procesadores">
+          <p class="category__name" data-category="procesadores">Procesadores</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/motherboard.png" alt="motherboards">
-          <p class="category__name">Motherboards</p>
+        <div class="category" data-category="motherboards">
+          <img class="category__img" src="/assets/img/category-icons/motherboard.png" alt="motherboards" data-category="motherboards">
+          <p class="category__name" data-category="motherboards">Motherboards</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/ram.png" alt="memorias ram">
-          <p class="category__name">Ram</p>
+        <div class="category" data-category="ram">
+          <img class="category__img" src="/assets/img/category-icons/ram.png" alt="memorias ram" data-category="ram">
+          <p class="category__name" data-category="ram">Ram</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/video-card.png" alt="placas de video">
-          <p class="category__name">Placas de video</p>
+        <div class="category" data-category="placas-de-video">
+          <img class="category__img" src="/assets/img/category-icons/video-card.png" alt="placas de video" data-category="placas-de-video">
+          <p class="category__name" data-category="placas-de-video">Placas de video</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/hdd.png" alt="discos rigidos">
-          <p class="category__name">Discos rigidos</p>
+        <div class="category" data-category="discos-rigidos">
+          <img class="category__img" src="/assets/img/category-icons/hdd.png" alt="discos rigidos" data-category="discos-rigidos">
+          <p class="category__name" data-category="discos-rigidos">Discos rigidos</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/ssd.png" alt="ssd">
-          <p class="category__name">SSD</p>
+        <div class="category" data-category="ssd">
+          <img class="category__img" src="/assets/img/category-icons/ssd.png" alt="ssd" data-category="ssd">
+          <p class="category__name" data-category="ssd">SSD</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/supply.png" alt="fuentes de poder">
-          <p class="category__name">Fuentes de poder</p>
+        <div class="category" data-category="fuentes">
+          <img class="category__img" src="/assets/img/category-icons/supply.png" alt="fuentes de poder" data-category="fuentes">
+          <p class="category__name" data-category="fuentes">Fuentes de poder</p>
         </div>
-        <div class="category">
-          <img class="category__img" src="/assets/img/category-icons/case.png" alt="gabinetes">
-          <p class="category__name">Gabinetes</p>
+        <div class="category" data-category="gabinetes">
+          <img class="category__img" src="/assets/img/category-icons/case.png" alt="gabinetes" data-category="gabinetes">
+          <p class="category__name" data-category="gabinetes">Gabinetes</p>
         </div>
       </div>
     </div>
-    <div class="cont-products" id="products">
-      <div class="products">
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-        <div class="product">
-          <img class="product__img" src="/assets/img/product-img.webp" alt="">
-          <p class="product__name">Gigabyte GeForce RTX 3060</p>
-          <p class="product__price">$200.000</p>
-          <button class="product__button">Agregar al carrito</button> 
-        </div>
-      </div>
+    <div class="cont-products">
+      <div class="products"></div>
     </div>
     <div class="slider">
       <div class="slide-track">
@@ -345,7 +228,10 @@
         <a class="footer__links--a" href="#">Privacidad</a>
       </div>
   </footer>
+  <div class="add-modal"></div>
 
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/assets/data.js"></script>
   <script src="/assets/carousel.js"></script>
   <script src="/assets/main.js"></script>

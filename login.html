@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/styles.css">
   <link rel="icon" type="image/x-icon" href="/assets/img/hightech-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/media-queries.css">
+  <link rel="stylesheet" href="/assets/access.css">
   <title>High Tech</title>
 </head>
 <body>
@@ -18,8 +20,8 @@
     </a>
     <div class="nav-cont">
       <div class="nav-links">
-        <a class="nav-links__a" href="index.html">Inicio</a>
-        <a class="nav-links__a" href="#products">Productos</a>
+        <a class="nav-links__a" href="/index.html">Inicio</a>
+        <a class="nav-links__a" href="/index.html#products">Productos</a>
         <a class="nav-links__a" href="/login.html">Ingresar</a>
       </div>
       <div class="bar">
@@ -32,6 +34,7 @@
           </a>
         </div>
         <img class="nav-icons__icon cart-icon" src="/assets/img/cart.png" alt="logo carrito">
+        <p class="cart-quantity"></p>
       </div>
       <div class="menu-label">
         <div class="burger">
@@ -40,24 +43,10 @@
           <span></span>
         </div>     
       </div>
-
       <div class="cart">
         <p class="close-cart">X</p>
         <h2>Tus Productos</h2>
-        <div class="cart-container">
-          <div class="cart-item">
-            <img class="item-img" src="assets/img/product-img.webp" alt="" />
-            <div class="item-info">
-              <h3 class="item-title">Nombre</h3>
-              <span class="item-price">$200.000</span>
-            </div>
-            <div class="item-handler">
-              <span class="quantity-handler down" data-id=${id}>-</span>
-              <span class="item-quantity">1</span>
-              <span class="quantity-handler up" data-id=${id}>+</span>
-            </div>
-          </div>
-        </div>
+        <div class="cart-container"></div>
         <span class="divider"></span>
         <div class="cart-total">
           <p>Total:</p>
@@ -191,6 +180,7 @@
       </div>
   </footer>
 
-  <script src="/assets/main.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/assets/global.js"></script>
 </body>
 </html>

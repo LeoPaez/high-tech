@@ -40,94 +40,6 @@ const saveLocalStorage = (cartList) => {
   localStorage.setItem("cart", JSON.stringify(cartList));
 };
 
-// Renderizar producto
-const renderProduct = (product) => {
-  const { id, img, name, price } = product;
-
-  return `
-    <div class="product">
-      <img class="product__img" src="${img}" alt="">
-      <p class="product__name">${name}</p>
-      <p class="product__price">$${(price * 280).toLocaleString('us')}</p>
-      <button class="product__button"
-      data-id="${id}"
-      data-img="${img}"
-      data-name='${name}'
-      data-price='${price}'>Agregar al carrito</button> 
-    </div>
-  `;
-};
-
-// Renderizar solo los productos nuevos
-const renderNewProducts = () => {
-  const newProducts = productsData.filter(
-    (product => product.new === true)
-  )
-  recentProducts.innerHTML += newProducts
-    .map(renderProduct) // .map((e) => renderProduct(e))
-    .join("");
-};
-
-// Al cargar la pagina renderizar la primera categoria
-const renderFirstCategory = () => {
-  products.innerHTML += firstCategory()
-    .map(renderProduct) // .map((e) => renderProduct(e))
-    .join("");
-};
-
-// Renderizar productos filtrados
-const renderFilteredProducts = (category) => {
-  const productsList = productsData.filter(
-    (product) => product.category === category
-  );
-  products.innerHTML = productsList.map(renderProduct).join("");
-};
-
-// Renderizar productos
-const renderProducts = (index = 0, category = undefined) => {
-  if (!category) {
-    renderFirstCategory();
-    renderNewProducts();
-    return;
-  }
-  renderFilteredProducts(category);
-};
-
-
-//* LOGICA DE FILTROS
-
-// Funcion para cambiar todos los estados relacionados a los filtros
-const changeFilterState = (e) => {
-  const selectedCategory = e.target.dataset.category;
-  // Necesito cambiar el estado visual de los botones
-  changeBtnActiveState(selectedCategory);
-};
-
-// Funcion para cambiar el estado visual de las categorias (la categoria seleccionada)
-const changeBtnActiveState = (selectedCategory) => {
-  const categories = [...categoriesList];
-  categories.forEach((categoryBtn) => {
-    if (categoryBtn.dataset.category !== selectedCategory) {
-      categoryBtn.classList.remove("select");
-      return;
-    }
-    categoryBtn.classList.add("select");
-  });
-};
-
-const applyFilter = (e) => {
-  console.log(e.target.dataset);
-  if (!e.target.matches(".category, .category__img, .category__name"))
-  return;
-  changeFilterState(e);
-  if (!e.target.dataset.category) {
-    products.innerHTML = "";
-    renderProducts();
-  } else {
-    renderProducts(0, e.target.dataset.category);
-  }
-};
-
 const toggleMenu = () => {
   barsMenu.classList.toggle("open-menu");
   if (cartMenu.classList.contains("open-cart")) {
@@ -379,14 +291,7 @@ const deleteCart = () => {
   );
 };
 
-// Boton submit del newsletter
-document.querySelector(".footer").addEventListener("click", (e) => {
-  e.preventDefault()
-});
-
 const init = () => {
-  renderProducts();
-  categories.addEventListener("click", applyFilter);
   barsBtn.addEventListener("click", toggleMenu);
   cartBtn.addEventListener("click", toggleCart);
   closeCartIcon.addEventListener("click", toggleCart)
@@ -394,8 +299,6 @@ const init = () => {
   overlay.addEventListener("click", closeOnOverlayClick);
   document.addEventListener("DOMContentLoaded", renderCart);
   document.addEventListener("DOMContentLoaded", showTotal);
-  recentProducts.addEventListener("click", addProduct);
-  products.addEventListener("click", addProduct);
   productsCart.addEventListener("click", handleQuantity);
   buyBtn.addEventListener("click", completeBuy);
   deleteBtn.addEventListener("click", deleteCart);
