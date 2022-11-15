@@ -309,13 +309,25 @@ const handleMinusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id === id);
 
   if (existingCartProduct.quantity === 1) {
-    if (completeCartAction(
-      "¿Desea eliminar el producto del carrito?",
-      "Producto borrado correctamente del carrito",
-      "El producto permanecera en el carrito"
-      )) {
-      removeProductFromCart(existingCartProduct);
-    }
+    if (
+      swal({
+        title: "¿Estás seguro?",
+        text: "¿Desea eliminar el producto del carrito?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Producto borrado correctamente del carrito", {
+            icon: "success",
+          });
+          removeProductFromCart(existingCartProduct);
+        } else {
+          swal("El producto permanecera en el carrito");
+        }
+      })
+    )
     return;
   }
   substractProductUnit(existingCartProduct);
