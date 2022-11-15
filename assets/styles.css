@@ -275,6 +275,10 @@ a {
   font-weight: 500;
   min-height: 60px;
   color: #212529;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .product__price {
   font-weight: 600;
